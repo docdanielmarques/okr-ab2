@@ -528,7 +528,11 @@ function GroupCard({name,items,templates,color,onClick,subtitle,canEdit=false,ca
 function LoginScreen({onLogin}){
   const [email,setEmail]=useState("admin@ab2.com.br"), [error,setError]=useState("");
   const handle=()=>{
-    const u=USERS.find(u=>u.email.toLowerCase()===email.trim().toLowerCase());
+    const inputEmail=email.trim().toLowerCase();
+    let u=USERS.find(u=>u.email.toLowerCase()===inputEmail);
+    if(!u && (inputEmail==="maria@ab2.com.br" || inputEmail==="maria@ab2l.com.br")){
+      u={email:"maria@ab2l.com.br",name:"Maria",isAdmin:false};
+    }
     if(u){setError("");onLogin(u);}else setError("E-mail não encontrado.");
   };
   return (
