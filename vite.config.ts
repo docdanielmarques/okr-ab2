@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  // Static HTML project - just serve index.html as-is
+  server: {
+    port: 8080,
+  },
   build: {
     rollupOptions: {
       input: "index.html",
