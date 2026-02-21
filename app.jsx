@@ -484,7 +484,7 @@ function ProjectCard({proj, onClick, canEdit}){
 
 // ─── Group Card ───────────────────────────────────────────────────────────────
 
-function GroupCard({name,items,templates,color,onClick,subtitle,canConfig=false,onConfig=null,configTitle=""}){
+function GroupCard({name,items,templates,color,onClick,subtitle,canEdit=false,canConfig=false,onConfig=null,configTitle=""}){
   const p=calcGroupPct(items,templates), st=getStatus(p);
   return (
     <div onClick={onClick}
@@ -495,7 +495,10 @@ function GroupCard({name,items,templates,color,onClick,subtitle,canConfig=false,
       <div style={{position:"absolute",top:0,left:0,right:0,height:3,background:color,borderRadius:"14px 14px 0 0"}}/>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14}}>
         <div>
-          <div style={{fontWeight:700,color:"#F1F5F9",fontSize:15,marginBottom:4}}>{name}</div>
+          <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4,flexWrap:"wrap"}}>
+            <div style={{fontWeight:700,color:"#F1F5F9",fontSize:15}}>{name}</div>
+            {canEdit&&<span style={{fontSize:10,background:color+"22",color,padding:"2px 7px",borderRadius:99,fontWeight:600}}>Você edita</span>}
+          </div>
           <div style={{fontSize:11,color:"#64748B"}}>{subtitle}</div>
         </div>
         <div style={{textAlign:"right"}}>
@@ -1182,8 +1185,8 @@ function App(){
                 canEdit={canEdit(p.id)}
               />
             ))}
-            <GroupCard name={groupLabels.summits} items={summits}   templates={SUMMIT_KR_TEMPLATES}   color={SUMMIT_COLOR}   onClick={()=>setView("summits")}   subtitle={`${summits.length} summits · KRs consolidados`}/>
-            <GroupCard name={groupLabels.esquentas} items={esquentas} templates={ESQUENTA_KR_TEMPLATES} color={ESQUENTA_COLOR} onClick={()=>setView("esquentas")} subtitle={`${esquentas.length} cidades · KRs consolidados`}/>
+            <GroupCard name={groupLabels.summits} items={summits}   templates={SUMMIT_KR_TEMPLATES}   color={SUMMIT_COLOR}   onClick={()=>setView("summits")}   subtitle={`${summits.length} summits · KRs consolidados`} canEdit={user.isAdmin}/>
+            <GroupCard name={groupLabels.esquentas} items={esquentas} templates={ESQUENTA_KR_TEMPLATES} color={ESQUENTA_COLOR} onClick={()=>setView("esquentas")} subtitle={`${esquentas.length} cidades · KRs consolidados`} canEdit={user.isAdmin||canEdit(5)}/>
             {user.isAdmin&&(
               <div onClick={()=>{setNewProjType("");setAddingProject(true);}}
                 onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
