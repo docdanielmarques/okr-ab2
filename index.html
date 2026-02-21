@@ -1,57 +1,26 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AB2 OKR Dashboard</title>
-    <style>
-      body { margin: 0; font-family: Arial, sans-serif; background: #020617; color: #e2e8f0; }
-      #root { min-height: 100vh; }
-      #boot-error {
-        display: none;
-        max-width: 760px;
-        margin: 40px auto;
-        padding: 16px;
-        border-radius: 10px;
-        border: 1px solid #7f1d1d;
-        background: #450a0a;
-        line-height: 1.45;
-      }
-      code { background: rgba(2, 6, 23, 0.5); padding: 2px 6px; border-radius: 6px; }
-    </style>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Lovable App</title>
+    <meta name="description" content="Lovable Generated Project" />
+    <meta name="author" content="Lovable" />
+
+    <!-- TODO: Update og:title to match your application name -->
+    <meta property="og:title" content="Lovable App" />
+    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
+
   <body>
-    <div id="boot-error"></div>
     <div id="root"></div>
-
-    <script>
-      (function () {
-        const errorBox = document.getElementById("boot-error");
-        const showError = (msg) => {
-          errorBox.style.display = "block";
-          errorBox.innerHTML = msg;
-        };
-
-        if (!window.React || !window.ReactDOM || !window.Babel) {
-          showError(
-            "<strong>Não foi possível carregar o app.</strong><br/>" +
-            "As bibliotecas externas (React/Babel) não carregaram.<br/>" +
-            "Confira internet/firewall e abra por servidor local.<br/><br/>" +
-            "Comando: <code>python3 -m http.server 5173</code><br/>" +
-            "URL: <code>http://localhost:5173</code>"
-          );
-          return;
-        }
-
-        window.addEventListener("error", function (e) {
-          showError("<strong>Erro ao iniciar o app:</strong><br/>" + (e.message || "erro desconhecido"));
-        });
-      })();
-    </script>
-
-    <script type="text/babel" data-presets="env,react" src="./app.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

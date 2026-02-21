@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 217 33% 11%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 96%;
+
+    --border: 217 33% 17%;
+    --input: 215 25% 27%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 84% 5%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 96%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* OKR-specific tokens */
+    --okr-bg: 222 84% 2%;
+    --okr-card: 217 53% 11%;
+    --okr-border: 215 25% 17%;
+    --okr-border-light: 215 19% 26%;
+    --okr-text: 210 40% 96%;
+    --okr-text-muted: 215 16% 47%;
+    --okr-text-dim: 215 19% 35%;
+
+    --okr-success: 160 84% 39%;
+    --okr-success-bg: 163 75% 16%;
+    --okr-warning: 38 92% 50%;
+    --okr-warning-bg: 28 92% 14%;
+    --okr-danger: 0 84% 60%;
+    --okr-danger-bg: 0 63% 15%;
+
+    --okr-purple: 263 70% 50%;
+    --okr-cyan: 187 86% 42%;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 96%;
+    --card: 217 53% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 217 53% 11%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 217 33% 17%;
+    --input: 215 25% 27%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
