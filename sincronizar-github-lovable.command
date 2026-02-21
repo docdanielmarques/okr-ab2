@@ -25,7 +25,7 @@ git add -A
 if git diff --cached --quiet; then
   git pull --rebase origin "$BRANCH" || true
   git push origin "$BRANCH"
-  git push --force-with-lease "$LOVABLE_REMOTE" "$BRANCH"
+  git push --force "$LOVABLE_REMOTE" "$BRANCH"
   /usr/bin/osascript -e 'display notification "Sem novas alterações locais. Repositórios sincronizados." with title "OKR AB2"'
   exit 0
 fi
@@ -35,6 +35,6 @@ git commit -m "$msg"
 
 git pull --rebase origin "$BRANCH" || true
 git push origin "$BRANCH"
-git push --force-with-lease "$LOVABLE_REMOTE" "$BRANCH"
+git push --force "$LOVABLE_REMOTE" "$BRANCH"
 
 /usr/bin/osascript -e 'display notification "Atualizações enviadas para GitHub e Lovable." with title "OKR AB2"'
