@@ -8,7 +8,7 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     env:
-      MIRROR_TOKEN_EFFECTIVE: ${{ secrets.MIRROR_TOKEN != '' && secrets.MIRROR_TOKEN || secrets.MIRROR_TOKEN }}
+      MIRROR_TOKEN_EFFECTIVE: ${{ secrets.MIRROR_TOKEN != '' && secrets.MIRROR_TOKEN || secrets.LOVABLE_MIRROR_TOKEN }}
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
