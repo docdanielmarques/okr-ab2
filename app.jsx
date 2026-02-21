@@ -1,11 +1,11 @@
 const { useState, useEffect } = React;
 
 const USERS = [
-  { email: "ana@ab2l.com.br",   name: "Ana Lima",    isAdmin: false },
-  { email: "bruno@ab2l.com.br", name: "Bruno Melo",  isAdmin: false },
-  { email: "carla@ab2l.com.br", name: "Carla Nunes", isAdmin: false },
-  { email: "diego@ab2l.com.br", name: "Diego Ramos", isAdmin: false },
-  { email: "admin@ab2l.com.br", name: "Admin",        isAdmin: true  },
+  { email: "ana@ab2.com.br",   name: "Ana Lima",    isAdmin: false },
+  { email: "bruno@ab2.com.br", name: "Bruno Melo",  isAdmin: false },
+  { email: "carla@ab2.com.br", name: "Carla Nunes", isAdmin: false },
+  { email: "diego@ab2.com.br", name: "Diego Ramos", isAdmin: false },
+  { email: "admin@ab2.com.br", name: "Admin",        isAdmin: true  },
 ];
 
 const NON_ADMIN_USERS = USERS.filter(u => !u.isAdmin);
@@ -28,7 +28,7 @@ const fmtDate  = (iso) => { try { return new Date(iso).toLocaleDateString("pt-BR
 const fmtShort = (iso) => { try { return new Date(iso+"T12:00:00").toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"}); } catch { return iso; } };
 const todayStr = () => new Date().toISOString().split("T")[0];
 
-const SUMMIT_OBJ_TITLE = "Consolidar presença internacional da AB2L";
+const SUMMIT_OBJ_TITLE = "Consolidar presença internacional da AB2";
 const SUMMIT_KR_TEMPLATES = [
   { title: "Levar executivos brasileiros",      unit: "executivos", target: 30 },
   { title: "Firmar parcerias internacionais",   unit: "parcerias",  target: 5  },
@@ -72,7 +72,7 @@ const DEFAULT_GROUP_PARENTS = {
 };
 
 const DEFAULT_PROJECTS = [
-  { id:1, type:"normal", name:"AB2L LEX 26", color:"#3B82F6", members:["Ana Lima"], children:[], objectives:[
+  { id:1, type:"normal", name:"AB2 LEX 26", color:"#3B82F6", members:["Ana Lima"], children:[], objectives:[
     { id:1, title:"Consolidar o maior evento de legaltech do Brasil", krs:[
       { id:1, title:"Confirmar 50 expositores",  current:18,  target:50,   unit:"expositores",   logs:[], linkLogs:[] },
       { id:2, title:"Alcançar 3.000 inscritos",  current:850, target:3000, unit:"inscritos",     logs:[], linkLogs:[] },
@@ -525,7 +525,7 @@ function GroupCard({name,items,templates,color,onClick,subtitle,canEdit=false,ca
 // ─── Login ────────────────────────────────────────────────────────────────────
 
 function LoginScreen({onLogin}){
-  const [email,setEmail]=useState("admin@ab2l.com.br"), [error,setError]=useState("");
+  const [email,setEmail]=useState("admin@ab2.com.br"), [error,setError]=useState("");
   const handle=()=>{
     const u=USERS.find(u=>u.email.toLowerCase()===email.trim().toLowerCase());
     if(u){setError("");onLogin(u);}else setError("E-mail não encontrado.");
@@ -534,13 +534,13 @@ function LoginScreen({onLogin}){
     <div style={{minHeight:"100vh",background:"#020617",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Inter,sans-serif"}}>
       <div style={{background:"#0F172A",border:"1px solid #1E293B",borderRadius:20,padding:40,width:"100%",maxWidth:380}}>
         <div style={{textAlign:"center",marginBottom:32}}>
-          <div style={{fontSize:11,color:"#64748B",letterSpacing:3,textTransform:"uppercase",marginBottom:8}}>AB2L</div>
+          <div style={{fontSize:11,color:"#64748B",letterSpacing:3,textTransform:"uppercase",marginBottom:8}}>AB2</div>
           <div style={{fontSize:22,fontWeight:800,color:"#F1F5F9",marginBottom:6}}>Dashboard OKR</div>
           <div style={{fontSize:13,color:"#64748B"}}>Entre com seu e-mail institucional</div>
         </div>
         <div style={{marginBottom:16}}>
           <label style={{fontSize:12,color:"#64748B",display:"block",marginBottom:6}}>E-mail</label>
-          <input type="email" placeholder="seu@ab2l.com.br" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>e.key==="Enter"&&handle()}
+          <input type="email" placeholder="seu@ab2.com.br" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>e.key==="Enter"&&handle()}
             style={{width:"100%",background:"#1E293B",border:`1px solid ${error?"#EF4444":"#334155"}`,color:"#F1F5F9",padding:"12px 14px",borderRadius:10,fontSize:14,boxSizing:"border-box",outline:"none"}}/>
           {error&&<div style={{fontSize:12,color:"#EF4444",marginTop:6}}>{error}</div>}
         </div>
@@ -616,12 +616,12 @@ function App(){
   useEffect(()=>{
     (async()=>{
       try{
-        const r1=await window.storage.get("ab2l-okr-v2",true);       setProjects(r1?JSON.parse(r1.value).map(normalizeProject):DEFAULT_PROJECTS.map(normalizeProject));
-        const r2=await window.storage.get("ab2l-summits-v2",true);   setSummits(r2?JSON.parse(r2.value):DEFAULT_SUMMITS);
-        const r3=await window.storage.get("ab2l-ann-v1",true);       setAnnouncements(r3?JSON.parse(r3.value):[]);
-        const r4=await window.storage.get("ab2l-esquentas-v1",true); setEsquentas(r4?JSON.parse(r4.value):DEFAULT_ESQUENTAS);
-        const r5=await window.storage.get("ab2l-groups-v1",true);    setGroupLabels(r5?JSON.parse(r5.value):DEFAULT_GROUP_LABELS);
-        const r6=await window.storage.get("ab2l-group-parents-v1",true); setGroupParents(r6?JSON.parse(r6.value):DEFAULT_GROUP_PARENTS);
+        const r1=await window.storage.get("ab2-okr-v2",true);       setProjects(r1?JSON.parse(r1.value).map(normalizeProject):DEFAULT_PROJECTS.map(normalizeProject));
+        const r2=await window.storage.get("ab2-summits-v2",true);   setSummits(r2?JSON.parse(r2.value):DEFAULT_SUMMITS);
+        const r3=await window.storage.get("ab2-ann-v1",true);       setAnnouncements(r3?JSON.parse(r3.value):[]);
+        const r4=await window.storage.get("ab2-esquentas-v1",true); setEsquentas(r4?JSON.parse(r4.value):DEFAULT_ESQUENTAS);
+        const r5=await window.storage.get("ab2-groups-v1",true);    setGroupLabels(r5?JSON.parse(r5.value):DEFAULT_GROUP_LABELS);
+        const r6=await window.storage.get("ab2-group-parents-v1",true); setGroupParents(r6?JSON.parse(r6.value):DEFAULT_GROUP_PARENTS);
       }catch{
         setProjects(DEFAULT_PROJECTS.map(normalizeProject)); setSummits(DEFAULT_SUMMITS);
         setAnnouncements([]); setEsquentas(DEFAULT_ESQUENTAS); setGroupLabels(DEFAULT_GROUP_LABELS); setGroupParents(DEFAULT_GROUP_PARENTS);
@@ -633,12 +633,12 @@ function App(){
   const persist=async(p,s,a,e,g=null,gp=null)=>{
     setSaving(true);
     try{
-      if(p!==null) await window.storage.set("ab2l-okr-v2",       JSON.stringify(p),true);
-      if(s!==null) await window.storage.set("ab2l-summits-v2",   JSON.stringify(s),true);
-      if(a!==null) await window.storage.set("ab2l-ann-v1",       JSON.stringify(a),true);
-      if(e!==null) await window.storage.set("ab2l-esquentas-v1", JSON.stringify(e),true);
-      if(g!==null) await window.storage.set("ab2l-groups-v1",    JSON.stringify(g),true);
-      if(gp!==null) await window.storage.set("ab2l-group-parents-v1", JSON.stringify(gp),true);
+      if(p!==null) await window.storage.set("ab2-okr-v2",       JSON.stringify(p),true);
+      if(s!==null) await window.storage.set("ab2-summits-v2",   JSON.stringify(s),true);
+      if(a!==null) await window.storage.set("ab2-ann-v1",       JSON.stringify(a),true);
+      if(e!==null) await window.storage.set("ab2-esquentas-v1", JSON.stringify(e),true);
+      if(g!==null) await window.storage.set("ab2-groups-v1",    JSON.stringify(g),true);
+      if(gp!==null) await window.storage.set("ab2-group-parents-v1", JSON.stringify(gp),true);
       setLastSaved(new Date().toLocaleDateString("pt-BR"));
     }catch(err){console.error(err);}
     setSaving(false);
@@ -1126,7 +1126,7 @@ function App(){
         <div style={{display:"flex",alignItems:"center",gap:10}}>
           {!isHome&&<button onClick={goBack} style={{background:"#1E293B",border:"none",color:"#94A3B8",padding:"6px 12px",borderRadius:8,cursor:"pointer",fontSize:13}}>← Voltar</button>}
           <div>
-            <div style={{fontSize:11,color:"#64748B",letterSpacing:2,textTransform:"uppercase"}}>AB2L</div>
+            <div style={{fontSize:11,color:"#64748B",letterSpacing:2,textTransform:"uppercase"}}>AB2</div>
             <h1 style={{margin:0,fontSize:22,fontWeight:800,color:"#F1F5F9"}}>
               {proj?proj.name:summit?summit.name:isSummits?groupLabels.summits:esquenta?`${esquenta.name}${esquenta.date?"  ·  📅 "+fmtShort(esquenta.date):""}`:isEsquentas?groupLabels.esquentas:"Dashboard OKR"}
             </h1>
@@ -1412,7 +1412,7 @@ function App(){
               <button onClick={()=>setNewProjType("multiprojeto")} style={{background:newProjType==="multiprojeto"?"#0F2240":"#1E293B",border:"1px solid #334155",color:"#CBD5E1",padding:"10px",borderRadius:8,cursor:"pointer"}}>Multiprojeto</button>
             </div>
           </Field>
-          <Field label="Nome do projeto"><input type="text" placeholder="Ex: AB2L Awards" value={newProjName} onChange={e=>setNewProjName(e.target.value)} style={INPUT_STYLE}/></Field>
+          <Field label="Nome do projeto"><input type="text" placeholder="Ex: AB2 Awards" value={newProjName} onChange={e=>setNewProjName(e.target.value)} style={INPUT_STYLE}/></Field>
           <Field label={newProjType==="multiprojeto"?"Objetivo do projeto-mãe":"Primeiro objetivo"}><input type="text" placeholder="Ex: Consolidar o programa de premiações" value={newProjObjTitle} onChange={e=>setNewProjObjTitle(e.target.value)} style={INPUT_STYLE}/></Field>
           <Field label="Cor do projeto">
             <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>

@@ -19,7 +19,7 @@ git add -A
 if git diff --cached --quiet; then
   git pull --rebase origin "$BRANCH" || true
   git push origin "$BRANCH"
-  /usr/bin/osascript -e 'display notification "Sem novas alterações locais. Repositório já sincronizado." with title "OKR AB2L"'
+  /usr/bin/osascript -e 'display notification "Sem novas alterações locais. Repositório já sincronizado." with title "OKR AB2"'
   exit 0
 fi
 
@@ -30,4 +30,4 @@ git commit -m "$msg"
 # Envia para o GitHub
 git push origin "$BRANCH"
 
-/usr/bin/osascript -e 'display notification "Atualizações enviadas para GitHub e Lovable." with title "OKR AB2L"'
+/usr/bin/osascript -e 'display notification "Atualizações enviadas para GitHub e Lovable." with title "OKR AB2"'

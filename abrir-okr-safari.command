@@ -2,7 +2,7 @@
 
 PROJECT_DIR="/Users/marques/Documents/Drive Marques/Projetos Github/OKR AB2L"
 URL="http://127.0.0.1:8080"
-LOG_FILE="/tmp/okr-ab2l-server.log"
+LOG_FILE="/tmp/okr-ab2-server.log"
 
 cd "$PROJECT_DIR" || exit 1
 
@@ -23,5 +23,5 @@ fi
 if /usr/bin/curl -sI "$URL" >/dev/null 2>&1; then
   /usr/bin/open -a Safari "$URL"
 else
-  /usr/bin/osascript -e 'display dialog "Nao foi possivel iniciar o servidor local na porta 8080.\n\nVeja o log em /tmp/okr-ab2l-server.log" buttons {"OK"} default button "OK"'
+  /usr/bin/osascript -e 'display dialog "Nao foi possivel iniciar o servidor local na porta 8080.\n\nVeja o log em /tmp/okr-ab2-server.log" buttons {"OK"} default button "OK"'
 fi
