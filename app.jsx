@@ -5,6 +5,7 @@ const USERS = [
   { email: "bruno@ab2.com.br", name: "Bruno Melo",  isAdmin: false },
   { email: "carla@ab2.com.br", name: "Carla Nunes", isAdmin: false },
   { email: "diego@ab2.com.br", name: "Diego Ramos", isAdmin: false },
+  { email: "maria@ab2l.com.br", name: "Maria",       isAdmin: false },
   { email: "admin@ab2.com.br", name: "Admin",        isAdmin: true  },
 ];
 
