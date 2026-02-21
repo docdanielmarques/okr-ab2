@@ -1,4 +1,4 @@
-name: Mirror docokr to lovable repo
+name: Mirror docokr to okr-ab2l
 
 on:
   push:
@@ -13,9 +13,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push to Lovable repo
+      - name: Push to okr-ab2l repo
         run: |
           git config user.name "docokr-mirror-bot"
           git config user.email "bot@users.noreply.github.com"
-          git remote add lovable https://x-access-token:${{ secrets.LOVABLE_MIRROR_TOKEN }}@github.com/docdanielmarques/SEU_REPO_LOVABLE.git
+          git remote add lovable https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/docdanielmarques/okr-ab2l.git
           git push --force lovable main:main
