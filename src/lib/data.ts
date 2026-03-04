@@ -149,14 +149,16 @@ export const DEFAULT_SUMMITS: Summit[] = [
 ];
 
 export const DEFAULT_ESQUENTAS: Esquenta[] = [
-  { id: "e1", name: "São Paulo, SP", date: "2026-03-11", objectives: [{ id: "eo1", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2100) }] },
+  { id: "e1", name: "Consolação, SP", date: "2026-03-11", objectives: [{ id: "eo1", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2100) }] },
   { id: "e2", name: "Salvador, BA", date: "2026-03-26", objectives: [{ id: "eo2", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2110) }] },
+  { id: "e9", name: "Itaim, SP", date: "2026-03-26", objectives: [{ id: "eo9", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2180) }] },
   { id: "e3", name: "Joinville, SC", date: "2026-04-08", objectives: [{ id: "eo3", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2120) }] },
   { id: "e4", name: "Florianópolis, SC", date: "2026-04-09", objectives: [{ id: "eo4", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2130) }] },
   { id: "e5", name: "Pinheiros, SP", date: "2026-04-10", objectives: [{ id: "eo5", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2140) }] },
   { id: "e6", name: "Santos, SP", date: "2026-04-14", objectives: [{ id: "eo6", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2150) }] },
   { id: "e7", name: "Belo Horizonte, MG", date: "2026-04-14", objectives: [{ id: "eo7", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2160) }] },
   { id: "e8", name: "Rio de Janeiro, RJ", date: "2026-04-16", objectives: [{ id: "eo8", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2170) }] },
+  { id: "e10", name: "Recife, PE", date: "2026-04-28", objectives: [{ id: "eo10", title: ESQUENTA_OBJ_TITLE, krs: makeEsquentaKRs([0, 0], 2190) }] },
 ];
 
 export const DEFAULT_PROJECTS: Project[] = [
